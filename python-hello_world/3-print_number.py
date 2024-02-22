@@ -1,7 +1,4 @@
 #!/usr/bin/python3
 
-# Define the variable number
-number =0
-
-# Print the value of number followed by "Battery street"
-print(f"{number} Battery street")
+number = 98
+print(f"{number} Battery street\n")
