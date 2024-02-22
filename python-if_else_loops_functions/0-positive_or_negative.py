@@ -1,10 +1,6 @@
-import random
-
-number = random.randint(-10, 10)
-
-if number > 0:
-    print(f"{number} is positive")
-elif number == 0:
-    print(f"{number} is zero")
-else:
-    print(f"{number} is negative")
+#!/usr/bin/python3
+def islower(c):
+    if ord(c) > 96:
+        return True
+    else:
+        return False
