@@ -1,3 +1,12 @@
 #!/usr/bin/python3
-number = 98
-print(f'{number} Battery street')
+
+number = -5
+
+if isinstance(number, int) or isinstance(number, float):
+    if number > 0:
+        print(f"Positive: {number}")
+    elif number < 0:
+        print(f"Negative: {number}")
+    else:
+        print("Zero")
+else:
