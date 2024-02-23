@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 # 1-calculation.py
-# Brennan D Baraban <375@holbertonschool.com>
 from calculator_1 import add, sub, mul, div
 
 a = 10
@@ -11,8 +10,9 @@ result_sub = sub(a, b)
 result_mul = mul(a, b)
 result_div = div(a, b)
 
-print(f"{a} + {b} = {result_add}")
-print(f"{a} - {b} = {result_sub}")
-print(f"{a} * {b} = {result_mul}")
-print(f"{a} / {b} = {result_div}")
+print(a, "+", b, "=", result_add)
+print(a, "-", b, "=", result_sub)
+print(a, "*", b, "=", result_mul)
+print(a, "/", b, "=", result_div)
+
 
