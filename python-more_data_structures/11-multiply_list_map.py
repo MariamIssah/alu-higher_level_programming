@@ -1,3 +1,10 @@
 #!/usr/bin/python3
 
-multiply_list_map = lambda lst, multiplier: list(map(lambda x: x * multiplier, lst))
+def multiply_list_map(lst, multiplier):
+    """
+    Multiplies each element of the list by the multiplier using map function.
+    """
+    def multiply(x):
+        return x * multiplier
+    
+    return list(map(multiply, lst))
