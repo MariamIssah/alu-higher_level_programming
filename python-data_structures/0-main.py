@@ -1,5 +1,12 @@
 #!/usr/bin/python3
-print_list_integer = __import__('0-print_list_integer').print_list_integer
+def multiple_returns(sentence):
+    if sentence:
+        return len(sentence), sentence[0]
+    else:
+        return 0, None
 
-my_list = [1, 2, 3, 4, 5]
-print_list_integer(my_list)
+# Uncomment the following lines to test the function
+# print(multiple_returns("Holberton is so cool"))
+# print(multiple_returns("H"))
+# print(multiple_returns(""))
+
