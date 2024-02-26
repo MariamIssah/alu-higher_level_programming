@@ -1,18 +1,12 @@
 #!/usr/bin/python3
-# 7-add_tuple.py
+def multiple_returns(sentence):
+    if sentence:  # Check if the sentence is not empty
+        return len(sentence), sentence[0]
+    else:
+        return 0, None
 
+# Uncomment the following lines to test the function
+# sentence = "At school, I learnt C!"
+# length, first = multiple_returns(sentence)
+# print("Length: {:d} - First character: {}".format(length, first))
 
-def add_tuple(tuple_a=(), tuple_b=()):
-    """Add two tuples."""
-    if len(tuple_a) < 2:
-        if len(tuple_a) == 0:
-            tuple_a = 0, 0
-        else:
-            tuple_a = tuple_a[0], 0
-    if len(tuple_b) < 2:
-        if len(tuple_b) == 0:
-            tuple_b = 0, 0
-        else:
-            tuple_b = tuple_b[0], 0
-
-    return (tuple_a[0] + tuple_b[0], tuple_a[1] + tuple_b[1])
