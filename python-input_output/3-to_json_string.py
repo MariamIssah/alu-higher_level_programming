@@ -3,16 +3,6 @@
 represented by a JSON string"""
 import json
 
-
-def from_json_string(my_str):
-    """
-    Return an object by a JSON representation.
-
-    Args:
-        my_str: JSON representation
-
-    Raises:
-        Exception: when the string can't be decoded
-    """
-
-    return json.loads(my_str)
+def to_json_string(my_obj):
+    """Returns the JSON representation of an object (string)."""
+    return json.dumps(my_obj)
