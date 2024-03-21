@@ -7,4 +7,4 @@ if [ $# -ne 1 ]; then
 fi
 
 # Send GET request with specific header using curl
-curl -sH "X-HolbertonSchool-User-Id: 98" "$1"
+curl -sH "X-HolbertonSchool-User-Id: 98" "$1" -X GET
