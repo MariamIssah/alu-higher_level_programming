@@ -10,8 +10,5 @@ if __name__ == "__main__":
     r = requests.get(url, allow_redirects=True)
 
     print("Body response:")
-    if r.status_code == 200:
-        print("\t- type: {}".format(type(r.text)))
-        print("\t- content: {}".format(r.text))
-    else:
-        print("\t- Error: {}".format(r.status_code))
+    print("\t- type: {}".format(type(r.text)))
+    print("\t- content: {}".format(r.text))
