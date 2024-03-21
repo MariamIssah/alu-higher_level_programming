@@ -1,8 +1,13 @@
 #!/usr/bin/python3
-""" Fetches basic request with urlib"""
-from urllib import request
+import urllib.request
 
-with request.urlopen("https://intranet.hbtn.io/status") as response:
-    r = response.read()
-    print("Body response:\n\t- type: {}\n\t- content: {}\n\t- utf8 content: {}"
-          .format(type(r), r, r.decode('utf-8')))
+if __name__ == "__main__":
+    url = "https://alu-intranet.hbtn.io/status"
+    with urllib.request.urlopen(url) as response:
+        html_content = response.read()
+        utf8_content = html_content.decode('utf-8')
+
+        print("Body response:")
+        print("\t- type:", type(html_content))
+        print("\t- content:", html_content)
+        print("\t- utf8 content:", utf8_content)
