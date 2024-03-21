@@ -1,10 +1,17 @@
 #!/usr/bin/python3
-"""Fetches https://intranet.hbtn.io/status."""
-
+"""__summary__
+- Write a Python script that
+- fetches https://intranet.hbtn.io/status.
+"""
 import requests
 
 if __name__ == "__main__":
-    r = requests.get("https://intranet.hbtn.io/status")
+    url = "https://intranet.hbtn.io/status"
+    r = requests.get(url, allow_redirects=True)
+
     print("Body response:")
-    print("\t- type: {}".format(type(r.text)))
-    print("\t- content: {}".format(r.text))
+    if r.status_code == 200:
+        print("\t- type: {}".format(type(r.text)))
+        print("\t- content: {}".format(r.text))
+    else:
+        print("\t- Error: {}".format(r.status_code))
