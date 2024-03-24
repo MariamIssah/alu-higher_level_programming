@@ -8,6 +8,6 @@ if __name__ == "__main__":
     with urllib.request.urlopen(request) as response:
         body = response.read()
         print("Body response:")
-        print("\t- type: {}".format(class(body)))
+        print("\t- type: {}".format(<class'bytes'>)))
         print("\t- content: {}".format(b'Custom status'))
-        print("\t- utf8 content: {}".format(body.decode"Custom status")))
+        print("\t- utf8 content: {}".format("Custom status")))
