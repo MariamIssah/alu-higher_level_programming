@@ -57,23 +57,13 @@ def matrix_mul(m_a, m_b):
 
 
 if __name__ == "__main__":
-    # Test cases
-    test_cases = [
-        ([1, 2, 3, 4], [[5, 6], [7, 8]]),
-        ([[5, 6], [7, 8]], [1, 2, 3, 4]),
-        ([[]], [[5, 6], [7, 8]]),
-        ([[5, 6, 10], [7, 8]], [[5, 6], [7, 8]]),
-        ([[5, 6], [7, 8]], [[5, 6, 1], [7, 8]])
-    ]
+    import sys
 
-    # Perform tests
-    for idx, (m_a, m_b) in enumerate(test_cases, 1):
-        try:
-            print(f"Test Case {idx}:")
-            print(f"m_a = {m_a}")
-            print(f"m_b = {m_b}")
-            print(f"Result = {matrix_mul(m_a, m_b)}")
-            print()
-        except (TypeError, ValueError) as e:
-            print(f"Test Case {idx} failed: {e}")
-            print()
+    if len(sys.argv) != 3:
+        print("Usage: ./100-matrix_mul.py <m_a> <m_b>")
+        sys.exit(1)
+
+    m_a = eval(sys.argv[1])
+    m_b = eval(sys.argv[2])
+
+    print(matrix_mul(m_a, m_b))
