@@ -66,3 +66,6 @@ def matrix_mul(m_a, m_b):
         new_matrix.append(new_row)
 
     return new_matrix
+        except (TypeError, ValueError) as e:
+            print(f"Test Case {idx} failed: {e}")
+            print()
