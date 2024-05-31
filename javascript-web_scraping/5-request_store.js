@@ -1,19 +1,19 @@
 #!/usr/bin/node
-const fs = require('fs');
 const request = require('request');
 
+const fs = require('fs');
+
 const url = process.argv[2];
+
 const filePath = process.argv[3];
 
-request(url, function (error, response, body) {
-  if (error) {
-    console.error(error);
+request.get(url, (err, res) => {
+  if (err) {
+    console.error(err);
   } else {
-    fs.writeFile(filePath, body, 'utf-8', function (err) {
+    fs.writeFile(filePath, res.body, 'utf-8', (err) => {
       if (err) {
-        console.error(err);
-      } else {
-        console.log('File saved:', filePath);
+        console.log(err);
       }
     });
   }
