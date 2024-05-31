@@ -18,7 +18,7 @@ request(apiUrl, function (error, response, body) {
 
   const completedTasksByUser = {};
 
-  tasks.forEach(function(task) {
+  tasks.forEach(function (task) {
     if (task.completed) {
       if (completedTasksByUser[task.userId]) {
         completedTasksByUser[task.userId]++;
