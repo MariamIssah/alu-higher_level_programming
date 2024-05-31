@@ -18,20 +18,30 @@ request(apiUrl, function (error, response, body) {
   const movie = JSON.parse(body);
   console.log('Characters in', movie.title + ':');
 
-  movie.characters.forEach(function (characterUrl) {
-    request(characterUrl, function (error, response, body) {
-      if (error) {
-        console.error('Error:', error);
-        return;
-      }
+  const characterPromises = movie.characters.map(characterUrl => {
+    return new Promise((resolve, reject) => {
+      request(characterUrl, function (error, response, body) {
+        if (error) {
+          reject(error);
+          return;
+        }
 
-      if (response.statusCode !== 200) {
-        console.error('Failed to fetch character data. Status code:', response.statusCode);
-        return;
-      }
+        if (response.statusCode !== 200) {
+          reject(`Failed to fetch character data. Status code: ${response.statusCode}`);
+          return;
+        }
 
-      const character = JSON.parse(body);
-      console.log(character.name);
+        const character = JSON.parse(body);
+        resolve(character.name);
+      });
     });
   });
+
+  Promise.all(characterPromises)
+    .then(characters => {
+      characters.forEach(character => console.log(character));
+    })
+    .catch(error => {
+      console.error(error);
+    });
 });
